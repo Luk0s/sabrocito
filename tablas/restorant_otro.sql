@@ -1,0 +1,1 @@
+INSERT INTO restorant.otro (id, descripcion, precio, visible) VALUES (1, 'Papas fritas jamón serrano', 500, 1);

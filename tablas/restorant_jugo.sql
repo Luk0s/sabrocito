@@ -1,0 +1,11 @@
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (1, 'Mango', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (2, 'Plátano', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (3, 'Melón', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (4, 'Frutilla', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (5, 'Papaya', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (6, 'Maracuya', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (7, 'Piña', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (8, 'Naranja', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (9, 'Guayaba', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (10, 'Limonada', 1000, 1500, 1);
+INSERT INTO restorant.jugo (id, descripcion, precio, precio_leche, visible) VALUES (11, 'Test111', 10002, 15003, 0);

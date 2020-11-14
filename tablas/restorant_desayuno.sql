@@ -1,0 +1,10 @@
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (1, 'Avena', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (2, 'Pan con Palta', 700, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (3, 'Quinoa', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (4, 'Pan con Huevo', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (5, 'Té', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (6, 'Pan con Queso Blanco', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (7, 'Café', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (8, 'Churrasco Palta', 1300, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (9, 'Manzanilla', 500, 1);
+INSERT INTO restorant.desayuno (id, descripcion, precio, visible) VALUES (10, 'Ave Mayo', 700, 1);
