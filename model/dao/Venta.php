@@ -51,13 +51,14 @@ class Venta extends Bd
 
     public static function nuevoDetalle($venta_id, $detalle){
         try{
-            $sql = "INSERT INTO venta_detalle (venta_id, tipo, producto_id, precio) VALUES(:venta_id, :tipo, :producto_id, :precio);";
+            $sql = "INSERT INTO venta_detalle (venta_id, tipo, producto_id, precio, comentario) VALUES(:venta_id, :tipo, :producto_id, :precio, :comentario);";
             $sth = self::conexion()->prepare($sql);
             $sth->execute([
                 ':venta_id' => $venta_id,
                 ':tipo' => $detalle['tipo'],
                 ':producto_id' => $detalle['id'],
-                ':precio' => $detalle['precio']
+                ':precio' => $detalle['precio'],
+                ':comentario' => $detalle['comentario']
             ]);
         }catch(PDOException $e){
             var_dump($e);
@@ -95,7 +96,7 @@ class Venta extends Bd
 
     public static function obtenerDetalleLite($venta_id){
         try{
-            $sql = "SELECT tipo, producto_id FROM venta_detalle WHERE venta_id = :venta_id;";
+            $sql = "SELECT tipo, producto_id, comentario FROM venta_detalle WHERE venta_id = :venta_id;";
             $sth = self::conexion()->prepare($sql);
             $sth->execute([ ':venta_id' => $venta_id ]);
             return $sth->fetchAll(PDO::FETCH_ASSOC);

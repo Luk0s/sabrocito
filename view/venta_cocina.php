@@ -60,7 +60,7 @@ $productos = [
                 $total_efectivo += ($venta->getPagoTipoId() == 1) ? $venta->getTotal() : 0;
                 ?>
                 <tr>
-                    <td><?= $venta->getVentaAt() ?> (<?= $venta->espera ?>)</td>
+                    <td><?= $venta->getVentaAt() ?> (<?= $venta->espera ?> min.)</td>
                     <td><?= $venta->pago_tipo ?></td>
                     <td><?= number_format($venta->getTotal(), 0, ',', '.') ?></td>
                     <td>
@@ -76,7 +76,7 @@ $productos = [
                         <h1 class="title is-5">Estado: <?= $venta->estado ?></h1>
                         <ul>
                             <?php foreach ($venta->getDetalle() as $item) {
-                                echo "<li>{$productos[$item['tipo']][$item['producto_id']]}</li>";
+                                echo "<li>{$productos[$item['tipo']][$item['producto_id']]} - {$item['comentario']}</li>";
                             } ?>
                         </ul>
                     </td>

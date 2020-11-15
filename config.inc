@@ -6,8 +6,8 @@
  * En: NetBeans
  **/
 
-define('URL', '/');
-define('RUTA', '/var/www/r2/');
+define('URL', '/sabrocito/');
+define('RUTA', '/Users/luk0s/Documents/Dev/sabrocito/');
 
 spl_autoload_register(function ($clase) {
     if(file_exists(RUTA . str_replace('\\', '/', $clase) . '.php')){

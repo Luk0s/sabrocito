@@ -21,6 +21,16 @@ include '../config.inc';
             <input type="hidden" name="detalle_menu" value="" />
             <input type="hidden" name="detalle_cena" value="" />
             <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Comentario Plato</label>
+                        <div class="control">
+                            <input class="input" id="comentario" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
                 <div class="column is-4">
                     <label class="label">Plato Simple</label>
                     <div class="field is-grouped">
@@ -137,6 +147,7 @@ include '../config.inc';
                 <thead>
                 <tr>
                     <th>Producto</th>
+                    <th>Comentario</th>
                     <th>Precio</th>
                     <th></th>
                 </tr>
@@ -144,7 +155,7 @@ include '../config.inc';
                 <tbody id="tbl_venta_cocina_detalle_simple"></tbody>
                 <tfoot>
                 <tr>
-                    <th colspan="2">Total</th>
+                    <th colspan="3">Total</th>
                     <th id="th_total"></th>
                 </tr>
                 </tfoot>

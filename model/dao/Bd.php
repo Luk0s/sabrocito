@@ -15,7 +15,7 @@ class Bd {
         $_db = null;
         try {
             $command = [\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES  \'UTF8\''];
-            $_db = new \PDO('mysql:host=localhost;dbname=restorant', 'restorant', 'restorant', $command);
+            $_db = new \PDO('mysql:host=localhost;dbname=restorant', 'root', '', $command);
             $_db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             $_db->beginTransaction();
             $sth = $_db->prepare("BEGIN");

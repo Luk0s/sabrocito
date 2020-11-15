@@ -21,7 +21,8 @@ class Venta
             $tmp []= [
                 'tipo' => $t[0],
                 'id' => $t[1],
-                'precio' => $item['precio']
+                'precio' => $item['precio'],
+                'comentario' => ''
             ];
             $total += $item['precio'];
         }
@@ -43,7 +44,8 @@ class Venta
                     $tmp []= [
                         'tipo' => $t[0],
                         'id' => $t[1],
-                        'precio' => $item['precio']
+                        'precio' => $item['precio'],
+                        'comentario' => $item['comentario']
                     ];
                 } else {
                     switch ($t[0]){
@@ -51,13 +53,15 @@ class Venta
                             $tmp []= [
                                 'tipo' => $t[0],
                                 'id' => $t[1],
-                                'precio' => $item['precio']
+                                'precio' => $item['precio'],
+                                'comentario' => $item['comentario']
                             ];
                             if(count($t) == 4){
                                 $tmp []= [
                                     'tipo' => $t[2],
                                     'id' => $t[3],
-                                    'precio' => $item['precio']
+                                    'precio' => $item['precio'],
+                                    'comentario' => $item['comentario']
                                 ];
                             }
                             break;
@@ -65,18 +69,21 @@ class Venta
                             $tmp []= [
                                 'tipo' => $t[0],
                                 'id' => $t[1],
-                                'precio' => $item['precio']
+                                'precio' => $item['precio'],
+                                'comentario' => $item['comentario']
                             ];
                             $tmp []= [
                                 'tipo' => 'agregado',
                                 'id' => $t[3],
-                                'precio' => $item['precio']
+                                'precio' => $item['precio'],
+                                'comentario' => $item['comentario']
                             ];
                             if(count($t) == 6){
                                 $tmp []= [
                                     'tipo' => 'agregado',
                                     'id' => $t[5],
-                                    'precio' => $item['precio']
+                                    'precio' => $item['precio'],
+                                    'comentario' => $item['comentario']
                                 ];
                             }
                             break;
@@ -87,7 +94,8 @@ class Venta
                 $tmp []= [
                     'tipo' => $t[1],
                     'id' => $t[2],
-                    'precio' => $item['precio']
+                    'precio' => $item['precio'],
+                    'comentario' => $item['comentario']
                 ];
             }
             $total += $item['precio'];

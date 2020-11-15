@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         td_producto.innerText = cmb_producto.options[cmb_producto.selectedIndex].text;
         td_producto.setAttribute('data-id', cmb_producto.options[cmb_producto.selectedIndex].value);
 
-        const td_precio = tr.insertCell(1);
+        const td_comentario = tr.insertCell(1);
+        td_comentario.innerText = document.querySelector('#comentario').value;
+
+        const td_precio = tr.insertCell(2);
         let precio = 0;
         if(cmb_producto.options[cmb_producto.selectedIndex].dataset['precioLeche'] !== undefined){
             precio = confirm('Con leche ?')
@@ -26,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tr = this.parentElement.parentElement.remove();
             calcular_total();
         });
-        const td_btn = tr.insertCell(2); td_btn.append(btn);
+        const td_btn = tr.insertCell(3); td_btn.append(btn);
         calcular_total();
     });
 
@@ -44,7 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ${(cmb_fondo.value === 'fondo_0') ? '' : cmb_fondo.options[cmb_fondo.selectedIndex].innerText}`;
             td_producto.setAttribute('data-id', `${(cmb_entrada.value === 'entrada_0') ? '' : cmb_entrada.options[cmb_entrada.selectedIndex].value}_${(cmb_fondo.value === 'fondo_0') ? '' : cmb_fondo.options[cmb_fondo.selectedIndex].value}`);
 
-            const td_precio = tr.insertCell(1); td_precio.innerText = precio;
+            const td_comentario = tr.insertCell(1);
+            td_comentario.innerText = document.querySelector('#comentario').value;
+
+            const td_precio = tr.insertCell(2); td_precio.innerText = precio;
             td_precio.setAttribute('data-precio', precio);
 
             const btn = document.createElement('button'); btn.className = 'button is-danger'; btn.type = 'button'; btn.innerText = 'X';
@@ -52,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tr = this.parentElement.parentElement.remove();
                 calcular_total();
             });
-            const td_btn = tr.insertCell(2); td_btn.append(btn);
+            const td_btn = tr.insertCell(3); td_btn.append(btn);
             calcular_total();
         }
     });
@@ -70,7 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
             ${cmb_agregado1.options[cmb_agregado1.selectedIndex].innerText} ${(cmb_agregado2.value === 'agregado2_0') ? '' : cmb_agregado2.options[cmb_agregado2.selectedIndex].innerText}`;
         td_producto.setAttribute('data-id', `${cmb_extra.options[cmb_extra.selectedIndex].value}_${cmb_agregado1.options[cmb_agregado1.selectedIndex].value}_${(cmb_agregado2.value === 'agregado2_0') ? '' : cmb_agregado2.options[cmb_agregado2.selectedIndex].value}`);
 
-        const td_precio = tr.insertCell(1); td_precio.innerText = precio;
+        const td_comentario = tr.insertCell(1);
+        td_comentario.innerText = document.querySelector('#comentario').value;
+
+        const td_precio = tr.insertCell(2); td_precio.innerText = precio;
         td_precio.setAttribute('data-precio', precio);
 
         const btn = document.createElement('button'); btn.className = 'button is-danger'; btn.type = 'button'; btn.innerText = 'X';
@@ -78,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tr = this.parentElement.parentElement.remove();
             calcular_total();
         });
-        const td_btn = tr.insertCell(2); td_btn.append(btn);
+        const td_btn = tr.insertCell(3); td_btn.append(btn);
         calcular_total();
     });
 
@@ -87,13 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const tbl = document.querySelector('#tbl_venta_cocina_detalle_simple');
         let total_precio = 0;
         Array.from(tbl.rows).forEach(fila => {
-            total_precio += parseInt(fila.cells[1].getAttribute('data-precio'));
+            total_precio += parseInt(fila.cells[2].getAttribute('data-precio'));
             detalle_simple.push({
                 'item': fila.cells[0].getAttribute('data-id'),
-                'precio': parseInt(fila.cells[1].getAttribute('data-precio')),
+                'precio': parseInt(fila.cells[2].getAttribute('data-precio')),
+                'comentario': fila.cells[1].innerText
             });
         });
         document.querySelector('#th_total').innerText = `$ ${total_precio.toLocaleString('de-DE')}`;
+        document.querySelector('#comentario').value = '';
     };
 
     document.querySelector('#btn_guardar').addEventListener('click', () => {
